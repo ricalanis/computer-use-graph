@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>computer-use-graph — demo</title>
+<style>
+  /* Deliberate choice: print-proof monochrome. System grotesque for prose,
+     monospace for data. No color anywhere. Thin rules like a manuscript. */
+  :root {
+    --ink: #000; --paper: #fff; --rule: #000; --faint: #666; --hair: #bbb;
+    --d-ink: #fff; --d-faint: #999; --d-hair: #444;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--paper); color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body { font-size: 17px; line-height: 1.45; }
+
+  .deck { height: 100vh; overflow: hidden; position: relative; }
+  .slide { display: none; min-height: 100vh; padding: 64px 72px 96px;
+    max-width: 1180px; margin: 0 auto; }
+  .slide.active { display: block; }
+  .slide.hero-light { padding-top: 48px; }
+  .slide.hero-light h2 { font-size: 28px; margin-bottom: 16px; }
+  .slide.dark { background: var(--ink); color: var(--d-ink); }
+  .slide.dark .kicker { color: var(--d-faint); border-bottom-color: var(--d-ink); }
+  .slide.dark .kicker b { color: var(--d-ink); }
+  .slide.dark th { border-bottom-color: var(--d-ink); }
+  .slide.dark td, .slide.dark th { border-bottom-color: var(--d-hair); }
+  .slide.dark .small, .slide.dark .stat .lbl { color: var(--d-faint); }
+  .slide.dark tr.hl td { border-bottom-color: var(--d-ink); }
+  .slide.dark hr.hair { border-top-color: var(--d-hair); }
+  .slide.dark hr.rule { border-top-color: var(--d-ink); }
+  .slide.dark figure img { border-color: var(--d-ink); }
+
+  /* chrome */
+  .kicker { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
+    border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 34px;
+    display: flex; justify-content: space-between; }
+  .kicker b { color: var(--ink); font-weight: 600; }
+  h1 { font-size: 44px; line-height: 1.08; letter-spacing: -.01em; font-weight: 700;
+    margin: 0 0 18px; max-width: 20ch; }
+  h2 { font-size: 34px; line-height: 1.1; letter-spacing: -.01em; margin: 0 0 22px; }
+  .sub { font-size: 20px; max-width: 62ch; margin-bottom: 30px; }
+  p { max-width: 68ch; margin-bottom: 14px; }
+  .small { font-size: 13px; color: var(--faint); }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 34px; }
+
+  hr.rule { border: 0; border-top: 1px solid var(--ink); margin: 26px 0; }
+  hr.hair { border: 0; border-top: 1px solid var(--hair); margin: 18px 0; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 16px; }
+  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--hair);
+    vertical-align: top; }
+  th { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .08em; border-bottom: 1.5px solid var(--ink); }
+  td.num, th.num { text-align: right; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  tr.hl td { border-bottom: 1.5px solid var(--ink); font-weight: 600; }
+
+  .stat { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .stat .big { font-size: 56px; font-weight: 600; letter-spacing: -.02em; display: block; }
+  .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
+
+  ul.plain { list-style: none; padding: 0; }
+  ul.plain li { padding-left: 22px; position: relative; margin-bottom: 12px; max-width: 62ch; }
+  ul.plain li::before { content: "—"; position: absolute; left: 0; }
+
+  figure { margin: 0; }
+  figure img { width: 100%; border: 1px solid var(--ink); display: block; background: #fff; }
+  figcaption { font-size: 12px; color: var(--faint); margin-top: 8px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+  .nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex;
+    justify-content: space-between; align-items: center; padding: 14px 72px;
+    border-top: 1px solid var(--ink); background: var(--paper); }
+  .nav button { all: unset; cursor: pointer; font-family: ui-monospace, "SF Mono", Menlo,
+    monospace; font-size: 13px; letter-spacing: .08em; padding: 6px 10px; }
+  .nav button:hover { background: var(--ink); color: var(--paper); }
+  .nav .count { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; }
+  .dots { display: flex; gap: 10px; }
+  .dot { width: 9px; height: 9px; border: 1px solid var(--ink); border-radius: 50%;
+    cursor: pointer; }
+  .dot.on { background: var(--ink); }
+  @media (max-width: 900px) { .slide { padding: 40px 24px 90px; } .cols, .cols3 { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; } .nav { padding: 12px 24px; } }
+  @media print { .nav { display: none; } .slide { display: block !important; page-break-after: always; } }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- ================= SLIDE 1 — KNOWLEDGE ================= -->
+<section class="slide light active" data-od-id="slide-01-knowledge">
+  <div class="kicker"><b>computer-use-graph</b><span>01 / 05 · knowledge</span></div>
+  <h1>Does a self-explored site graph beat flat memory — at equal cost?</h1>
+  <p class="sub">A public, clean-room research project. The question, the evidence base behind
+  it, and the experiment we built to answer it.</p>
+  <div class="cols">
+    <div>
+      <p><b>The bet.</b> An agent that explores a website on its own and builds a
+      <b>type-abstracted graph</b> of it — pages as nodes, affordances as edges — beats an
+      agent that rereads <b>flat transcripts</b>, when both get the same memory budget and the
+      exploration cost is counted.</p>
+      <p><b>The evidence base.</b> Six research threads, 176 sources, every load-bearing claim
+      re-verified by the root session (✓ marks). Twenty findings changed the plan. Two matter
+      most here:</p>
+      <ul class="plain">
+        <li><b>F1</b> — the closest paper (<i>Environment Maps</i>, arXiv:2603.23610) already ran
+        graph-vs-none on WebArena: 14.2 → 23.3 → 28.2. So our novelty is <b>autonomous
+        exploration, a held-out firewall, and amortized cost</b>.</li>
+        <li><b>F2</b> — wherever a flat baseline existed, flat memory took ~2/3 of the win.
+        The real fight is <b>graph vs flat</b>, and it will be small.</li>
+      </ul>
+    </div>
+    <div>
+      <table>
+        <tr><th>What we verified</th><th class="num">count</th></tr>
+        <tr><td>Sources in the bibliography, with verification status</td><td class="num">176</td></tr>
+        <tr><td>Findings that changed the design</td><td class="num">20</td></tr>
+        <tr><td>Design decisions logged (decided / proposed / open)</td><td class="num">16 + 4</td></tr>
+        <tr><td>Open questions, prioritized, each tagged with the phase that answers it</td><td class="num">27</td></tr>
+        <tr><td>Root re-verifications of worker-retrieved claims</td><td class="num">14</td></tr>
+      </table>
+      <hr class="hair">
+      <p class="small">Every claim carries a public citation. ✓ = re-checked against the source.
+      Nothing internal, nothing unverifiable — the whole base is in the repo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLIDE 2 — EXPERIMENT ================= -->
+<section class="slide dark" data-od-id="slide-02-experiment"><b>computer-use-graph</b><span>02 / 05 · experiment</span></div>
+  <h2>The miniature: same data, two memories, one difference</h2>
+  <p class="sub">A controlled replica of the Environment Maps arm structure, on a synthetic
+  admin panel — with the two controls their setup lacked.</p>
+  <div class="cols3">
+    <div>
+      <p><b>The site.</b> 25 pages, 3-level navigation, decoy labels: “Email digest” next to
+      “Email notifications”, “Install analytics” next to “Install beta analytics”. The agent
+      gets no hints about which is real. Validators credit only real effects.</p>
+    </div>
+    <div>
+      <p><b>The firewall.</b> A task-agnostic random walk explores the site — it never sees
+      task text. Every evaluation task is held out <i>by construction</i>. The same exploration
+      log builds both memories.</p>
+    </div>
+    <div>
+      <p><b>The arms.</b> <span class="mono">none</span> / <span class="mono">flat</span>
+      (recency-ordered transcript) / <span class="mono">graph</span> (typed pages,
+      affordance→destination edges). <b>Char-matched budgets.</b> Identical information —
+      the only difference is structure.</p>
+    </div>
+  </div>
+  <hr class="rule">
+  <div class="cols">
+    <div>
+      <table>
+        <tr><th>design choice</th><th>why</th></tr>
+        <tr><td>24 tasks × 3 arms × 3 exploration seeds</td><td>216 paired episodes; seeds are repeated measures</td></tr>
+        <tr><td>Programmatic validators</td><td>immune to decoy-state traps; no judge bias</td></tr>
+        <tr><td>Paired exact McNemar + Wilson CIs</td><td>the stats the full experiment will use</td></tr>
+        <tr><td>Per-step confidence logged</td><td>tests the uncertainty half of the hypothesis</td></tr>
+      </table>
+    </div>
+    <div>
+      <p><b>What this is not.</b> Not evidence for the hypothesis — a smoke test of the
+      machinery, powered to reproduce the literature’s warnings, not to detect the effect.
+      The pre-registered plan for the real experiment is in the repo
+      (<span class="mono">docs/02-design-v0.2.md</span>).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLIDE 3 — IMAGES ================= -->
+<section class="slide light hero-light" data-od-id="slide-03-images" data-screen-label="03 The site, explored">
+  <div class="kicker"><b>computer-use-graph</b><span>03 / 05 · the site, explored</span></div>
+  <h2>What the crawler learned</h2>
+  <div class="cols">
+    <figure>
+      <img src="../micro/img/site_graph.svg" alt="Explored site graph: 21 pages in depth layers, affordance edges">
+      <figcaption>site graph, seed 7 — 21 pages, 40 affordance→destination edges.
+      This drawing is the same data the agent receives as its graph memory.</figcaption>
+    </figure>
+    <div>
+      <figure>
+        <img src="../micro/img/pages/notifications.png" alt="Notifications page showing decoy labels">
+        <figcaption>the decoy trap: “Email digest” (real) next to “Email notifications”
+        (decoy). Validators ignore decoy effects.</figcaption>
+      </figure>
+      <hr class="hair">
+      <figure>
+        <img src="../micro/img/pages/integrations.png" alt="Integrations page with the directory entry point">
+        <figcaption>the integrations page — “Browse directory” leads to the install traps:
+        “Install analytics” (real) vs “Install beta analytics” (decoy).</figcaption>
+      </figure>
+      <p class="small" style="margin-top:14px">All 21 explored pages as thumbnails:
+      <span class="mono">micro/img/pages_grid.png</span> — regenerate everything with
+      <span class="mono">render_pages.py</span> / <span class="mono">render_graph.py</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLIDE 4 — RESULTS ================= -->
+<section class="slide dark" data-od-id="slide-04-results"><b>computer-use-graph</b><span>04 / 05 · results</span></div>
+  <h2>Ordering confirmed. Significance not yet — as predicted.</h2>
+  <div class="cols">
+    <div>
+      <table>
+        <tr><th>arm</th><th class="num">success</th><th class="num">95% CI</th><th class="num">avg steps</th></tr>
+        <tr><td>none</td><td class="num">59.7%</td><td class="num">[48.2, 70.3]</td><td class="num">7.3</td></tr>
+        <tr><td>flat</td><td class="num">70.8%</td><td class="num">[59.5, 80.1]</td><td class="num">6.5</td></tr>
+        <tr class="hl"><td>graph</td><td class="num">73.6%</td><td class="num">[62.4, 82.4]</td><td class="num">6.4</td></tr>
+      </table>
+      <hr class="hair">
+      <table>
+        <tr><th>contrast</th><th class="num">Δ</th><th class="num">ψ</th><th class="num">p (exact McNemar)</th></tr>
+        <tr><td>flat vs none</td><td class="num">+11.1pp</td><td class="num">0.19</td><td class="num">0.057</td></tr>
+        <tr><td>graph vs flat</td><td class="num">+2.8pp</td><td class="num">0.11</td><td class="num">0.73</td></tr>
+      </table>
+      <p class="small" style="margin-top:12px">n = 72 task-seed pairs per arm. ψ = discordant-pair rate.</p>
+    </div>
+    <div>
+      <div class="stat" style="margin-bottom:26px">
+        <span class="big">79%</span>
+        <span class="lbl">of the memory win taken by flat alone (11.1 of 14.0pp)</span>
+      </div>
+      <div class="stat" style="margin-bottom:26px">
+        <span class="big">0.49</span>
+        <span class="lbl">verbalized-confidence AUROC vs failure — a coin flip, at every progress quartile</span>
+      </div>
+      <p><b>Read it honestly.</b> The ordering (none &lt; flat &lt; graph) matches the
+      hypothesis and the prior work. The primary contrast is +2.8pp and not significant —
+      <i>which is the expected result at n=72</i>: our own power tables said this sample cannot
+      resolve a small effect. The flat-dominance finding reproduced (79% vs the literature’s
+      ~65%). And the agent’s own confidence is worthless — reproducing <i>Last Step Matters</i>
+      before spending a dollar on the real benchmark.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SLIDE 5 — CONCLUSION / NEXT ================= -->
+<section class="slide light" data-od-id="slide-05-conclusion"><b>computer-use-graph</b><span>05 / 05 · conclusion &amp; next steps</span></div>
+  <h2>The machinery is validated. The next dollar goes to the real thing.</h2>
+  <div class="cols">
+    <div>
+      <p><b>What the miniature established.</b></p>
+      <ul class="plain">
+        <li>The full mechanism works end-to-end: task-agnostic exploration → same-data
+        graph/flat memories → matched budgets → programmatic validators → paired statistics.</li>
+        <li>The literature’s two warnings reproduced live: flat takes most of the win, and
+        verbalized confidence is uninformative.</li>
+        <li>The power math is empirical now — ψ measured, sample size for the real run
+        computed from it, not guessed.</li>
+      </ul>
+      <p><b>What it did not establish.</b> Whether the graph beats flat. That needs the
+      362-task benchmark, and the plan is already pre-registered.</p>
+    </div>
+    <div>
+      <p><b>Next steps, in order.</b></p>
+      <table>
+        <tr><th>step</th><th>answers</th></tr>
+        <tr><td>1 · action-entropy scorer</td><td>is there a live uncertainty signal at all?</td></tr>
+        <tr><td>2 · distractor-graph control</td><td>is the graph win structure, or just tokens?</td></tr>
+        <tr><td>3 · WebArena pilot (~50 GitLab tasks)</td><td>flat gain, ψ, AUROC — the §6.3 gate</td></tr>
+        <tr><td>4 · eight-arm comparison (362 tasks)</td><td>the primary contrast, amortized cost</td></tr>
+      </table>
+      <hr class="hair">
+      <p class="small">Everything shown today is public and reproducible:
+      <span class="mono">github.com/ricalanis/computer-use-graph</span> — verified knowledge base,
+      design v0.2, the micro run, raw results, and the demo you are watching.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="nav">
+  <button id="prev">← prev</button>
+  <div class="dots" id="dots"></div>
+  <span class="count mono" id="count">01 / 05</span>
+  <button id="next">next →</button>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  const dots = document.getElementById('dots');
+  let i = 0;
+  slides.forEach((_, k) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (k === 0 ? ' on' : '');
+    d.onclick = () => go(k);
+    dots.appendChild(d);
+  });
+  function go(k) {
+    i = Math.max(0, Math.min(slides.length - 1, k));
+    slides.forEach((s, n) => s.classList.toggle('active', n === i));
+    [...dots.children].forEach((d, n) => d.classList.toggle('on', n === i));
+    document.getElementById('count').textContent =
+      String(i + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+  }
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.getElementById('next').onclick = () => go(i + 1);
+  addEventListener('keydown', e => {
+    if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) go(i + 1);
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) go(i - 1);
+  });
+</script>
+</body>
+</html>
