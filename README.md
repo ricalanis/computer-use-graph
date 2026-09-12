@@ -87,6 +87,24 @@ python3 micro/analyze.py
 
 Stdlib only, no other dependencies. Each full arm-seed run is ~24 episodes × ~7 LLM calls.
 
+## The site and what was explored
+
+The micro experiment runs on a synthetic admin panel — 25 pages, 3-level navigation, decoy
+labels. The exploration (task-agnostic random walk, seed 7) visited 21 of them:
+
+![Explored site graph](micro/img/site_graph.svg)
+
+Pages as the agent sees them (all 21 explored pages, seed 7):
+
+![Pages explored](micro/img/pages_grid.png)
+
+Individual pages: [dashboard](micro/img/pages/dashboard.png) ·
+[account](micro/img/pages/account.png) · [security](micro/img/pages/security.png) ·
+[notifications](micro/img/pages/notifications.png) — note the decoy labels ("Email digest" next
+to "Email notifications") · [integrations directory](micro/img/pages/integrations_dir.png) —
+"Install analytics" next to "Install beta analytics" · [billing](micro/img/pages/billing.png).
+Regenerate with `python3 micro/render_pages.py` and `python3 micro/render_graph.py`.
+
 ## Replication lineage
 
 The micro experiment is a deliberate miniature of the closest prior work: **Environment Maps:

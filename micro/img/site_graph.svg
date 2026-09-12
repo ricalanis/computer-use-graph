@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="580" font-family="-apple-system,Helvetica,sans-serif">
+<rect width="1180" height="580" fill="#f8fafc"/>
+<text x="590.0" y="34" text-anchor="middle" font-size="17" font-weight="600" fill="#111827">Explored site graph — 21 pages, seed 7 (task-agnostic random walk, 140 steps)</text>
+<path d="M495.0,566 C495.0,596 1445.0,376 1445.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M210.0,346 C210.0,376 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M210.0,346 C210.0,376 305.0,376 305.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M210.0,346 C210.0,376 875.0,376 875.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M210.0,346 C210.0,376 1255.0,376 1255.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M210.0,346 C210.0,376 1445.0,376 1445.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M-455.0,456 C-455.0,486 780.0,266 780.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M-265.0,456 C-265.0,486 780.0,266 780.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M-75.0,456 C-75.0,486 590.0,266 590.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M115.0,456 C115.0,486 970.0,266 970.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M400.0,346 C400.0,376 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,236 C590.0,266 210.0,266 210.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,236 C590.0,266 400.0,266 400.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,236 C590.0,266 590.0,266 590.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,236 C590.0,266 780.0,266 780.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,236 C590.0,266 970.0,266 970.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M305.0,456 C305.0,486 210.0,266 210.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M495.0,456 C495.0,486 970.0,266 970.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,126 C590.0,156 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M685.0,456 C685.0,486 970.0,266 970.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M875.0,456 C875.0,486 210.0,266 210.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,346 C590.0,376 -75.0,376 -75.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,346 C590.0,376 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M590.0,346 C590.0,376 1065.0,376 1065.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1065.0,456 C1065.0,486 590.0,266 590.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1255.0,456 C1255.0,486 210.0,266 210.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1445.0,456 C1445.0,486 495.0,486 495.0,516" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1445.0,456 C1445.0,486 210.0,266 210.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1445.0,456 C1445.0,486 685.0,486 685.0,516" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M685.0,566 C685.0,596 1445.0,376 1445.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M780.0,346 C780.0,376 -265.0,376 -265.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M780.0,346 C780.0,376 -455.0,376 -455.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M780.0,346 C780.0,376 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M780.0,346 C780.0,376 1635.0,376 1635.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M1635.0,456 C1635.0,486 780.0,266 780.0,296" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M970.0,346 C970.0,376 115.0,376 115.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M970.0,346 C970.0,376 590.0,156 590.0,186" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M970.0,346 C970.0,376 495.0,376 495.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M970.0,346 C970.0,376 685.0,376 685.0,406" fill="none" stroke="#94a3b8" stroke-width="1.4" marker-end="url(#arr)"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+<rect x="420.0" y="520" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="495.0" y="548.0" text-anchor="middle" font-size="13" fill="#111827">Access logs</text>
+<text x="495.0" y="564.0" text-anchor="middle" font-size="10" fill="#64748b">access_logs</text>
+<rect x="135.0" y="300" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="210.0" y="328.0" text-anchor="middle" font-size="13" fill="#111827">Account</text>
+<text x="210.0" y="344.0" text-anchor="middle" font-size="10" fill="#64748b">account</text>
+<rect x="-530.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="-455.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Advanced</text>
+<text x="-455.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">advanced</text>
+<rect x="-340.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="-265.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">API keys</text>
+<text x="-265.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">api_keys</text>
+<rect x="-150.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="-75.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Appearance</text>
+<text x="-75.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">appearance</text>
+<rect x="40.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="115.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Apps</text>
+<text x="115.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">apps</text>
+<rect x="325.0" y="300" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="400.0" y="328.0" text-anchor="middle" font-size="13" fill="#111827">Billing</text>
+<text x="400.0" y="344.0" text-anchor="middle" font-size="10" fill="#64748b">billing</text>
+<rect x="515.0" y="190" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="590.0" y="218.0" text-anchor="middle" font-size="13" fill="#111827">Dashboard</text>
+<text x="590.0" y="234.0" text-anchor="middle" font-size="10" fill="#64748b">dashboard</text>
+<rect x="230.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="305.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Email aliases</text>
+<text x="305.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">email_aliases</text>
+<rect x="420.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="495.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Integrations</text>
+<text x="495.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">integrations</text>
+<rect x="515.0" y="80" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="590.0" y="108.0" text-anchor="middle" font-size="13" fill="#111827">Login</text>
+<text x="590.0" y="124.0" text-anchor="middle" font-size="10" fill="#64748b">login</text>
+<rect x="610.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="685.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Members</text>
+<text x="685.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">members</text>
+<rect x="800.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="875.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Notifications</text>
+<text x="875.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">notifications</text>
+<rect x="515.0" y="300" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="590.0" y="328.0" text-anchor="middle" font-size="13" fill="#111827">Preferences</text>
+<text x="590.0" y="344.0" text-anchor="middle" font-size="10" fill="#64748b">preferences</text>
+<rect x="990.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1065.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Notification preferences</text>
+<text x="1065.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">prefs_notifications</text>
+<rect x="1180.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1255.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Profile</text>
+<text x="1255.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">profile</text>
+<rect x="1370.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1445.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Security</text>
+<text x="1445.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">security</text>
+<rect x="610.0" y="520" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="685.0" y="548.0" text-anchor="middle" font-size="13" fill="#111827">Active sessions</text>
+<text x="685.0" y="564.0" text-anchor="middle" font-size="10" fill="#64748b">sessions</text>
+<rect x="705.0" y="300" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="780.0" y="328.0" text-anchor="middle" font-size="13" fill="#111827">System</text>
+<text x="780.0" y="344.0" text-anchor="middle" font-size="10" fill="#64748b">system</text>
+<rect x="1560.0" y="410" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1635.0" y="438.0" text-anchor="middle" font-size="13" fill="#111827">Webhooks</text>
+<text x="1635.0" y="454.0" text-anchor="middle" font-size="10" fill="#64748b">webhooks</text>
+<rect x="895.0" y="300" width="150" height="46" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="970.0" y="328.0" text-anchor="middle" font-size="13" fill="#111827">Workspace</text>
+<text x="970.0" y="344.0" text-anchor="middle" font-size="10" fill="#64748b">workspace</text>
+<text x="20" y="564" font-size="11" fill="#64748b">Edges: affordance → destination, as learned by exploration. Self-effect actions (toggles, text fields) omitted; see micro_exp.py graph_block.</text>
+</svg>

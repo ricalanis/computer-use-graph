@@ -65,3 +65,5 @@ firewall. See the [replication lineage table](../README.md#replication-lineage) 
 - `results_{arm}_s{seed}.json` — per-run episodes with full trajectories and per-step confidence.
 - `memory_{graph,flat}_s{seed}.txt` — the exact memory blocks injected per arm/seed.
 - `log_*.txt` — one-line run summaries.
+- `render_pages.py` / `render_graph.py` — regenerate the page screenshots and the explored-graph
+  SVG in `img/` (headless Chrome).
