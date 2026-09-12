@@ -83,6 +83,48 @@ python3 micro/analyze.py
 
 Stdlib only, no other dependencies. Each full arm-seed run is ~24 episodes × ~7 LLM calls.
 
+## Demo sequence (current state, ~10 minutes)
+
+A live walkthrough of what exists right now, in order. Every step is runnable from a terminal or
+shown from committed files — steps 5–6 can fall back to the committed results if the network is
+unreliable.
+
+1. **The bet (30s).** This README, top. The one-line question, and: "we built the smallest possible
+   version of this experiment and ran it."
+2. **The evidence base (1 min).** `knowledge/08-key-findings.md` — point at F1 (the closest paper
+   already ran graph-vs-flat, so our novelty is autonomous exploration + cost accounting) and F2
+   (flat memory takes ~2/3 of the win, so the real fight is graph vs flat).
+3. **The site and the arms (2 min).** `micro/micro_exp.py` — scroll `PAGES` (25 pages, decoy
+   labels), then `explore()` (the task-agnostic random walk that never sees task text — the
+   anti-contamination firewall), then `graph_block` vs `flat_block`: same exploration data, two
+   representations, char-matched budgets. Identical information; the only difference is structure.
+4. **The actual memories (1 min).** Side by side:
+   ```bash
+   cat micro/memory_graph_s7.txt   # typed pages, affordance->destination edges
+   cat micro/memory_flat_s7.txt    # recency-ordered transcript, same chars
+   ```
+   The whole hypothesis visible in two text files.
+5. **Run one arm live (3 min).**
+   ```bash
+   python3 micro/micro_exp.py --arm graph --seed 7 --out /tmp/demo_graph.json
+   ```
+   ~24 episodes against Ollama in real time; every step is one LLM call, logged with confidence.
+6. **The analysis (1 min).**
+   ```bash
+   python3 micro/analyze.py
+   ```
+   Walk the output top to bottom: the arm table (59.7% → 70.8% → 73.6%), the paired stats
+   ("graph vs flat: +2.8pp, p=0.73 — not significant, and that's the expected result at n=72; the
+   power tables in this repo predicted it"), then the AUROC block ("verbalized confidence is 0.49,
+   i.e. useless — which is itself a finding; it matches the literature").
+7. **The honest close (1 min).** `micro/README.md` → "Known limitations" (smoke test, one model,
+   no distractor control), then the status line above: machinery validated, direction correct,
+   noise exactly as predicted. Next spend: the entropy scorer and the real-benchmark pilot, both
+   planned in `docs/02-design-v0.2.md`.
+
+Arc: *a verified literature base, a working miniature of the exact experiment, results that
+reproduce the literature's warnings, and a pre-registered plan for the real thing.*
+
 ## Scope rule
 
 Clean-room and public. No employer-internal technology, data, benchmarks, or unreleased work informs
