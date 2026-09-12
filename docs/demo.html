@@ -17,9 +17,20 @@
   body { font-size: 17px; line-height: 1.45; }
 
   .deck { height: 100vh; overflow: hidden; position: relative; }
-  .slide { display: none; min-height: 100vh; padding: 64px 72px 96px;
-    max-width: 1180px; margin: 0 auto; }
-  .slide.active { display: block; }
+  .slide { display: none; height: 100vh; padding: 44px 64px 78px;
+    max-width: 1180px; margin: 0 auto; overflow: hidden;
+    flex-direction: column; }
+  .slide.active { display: flex; }
+  /* when content is taller than the box, scale the whole slide down to fit */
+  @media (max-height: 820px) {
+    .slide { font-size: 15px; }
+    .slide h1 { font-size: 31px; }
+    .slide h2 { font-size: 24px; }
+    .slide .sub { font-size: 15px; }
+    .slide .stat .big { font-size: 38px; }
+    .slide table { font-size: 14px; }
+    .slide figure img { max-height: 300px; object-fit: contain; }
+  }
   .slide.hero-light { padding-top: 48px; }
   .slide.hero-light h2 { font-size: 28px; margin-bottom: 16px; }
   .slide.dark { background: var(--ink); color: var(--d-ink); }
@@ -36,14 +47,14 @@
   /* chrome */
   .kicker { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
     letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
-    border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 34px;
+    border-bottom: 1px solid var(--ink); padding-bottom: 8px; margin-bottom: 22px;
     display: flex; justify-content: space-between; }
   .kicker b { color: var(--ink); font-weight: 600; }
-  h1 { font-size: 44px; line-height: 1.08; letter-spacing: -.01em; font-weight: 700;
-    margin: 0 0 18px; max-width: 20ch; }
-  h2 { font-size: 34px; line-height: 1.1; letter-spacing: -.01em; margin: 0 0 22px; }
-  .sub { font-size: 20px; max-width: 62ch; margin-bottom: 30px; }
-  p { max-width: 68ch; margin-bottom: 14px; }
+  h1 { font-size: 36px; line-height: 1.08; letter-spacing: -.01em; font-weight: 700;
+    margin: 0 0 14px; max-width: 22ch; }
+  h2 { font-size: 27px; line-height: 1.1; letter-spacing: -.01em; margin: 0 0 16px; }
+  .sub { font-size: 17px; max-width: 62ch; margin-bottom: 20px; }
+  p { max-width: 68ch; margin-bottom: 12px; }
   .small { font-size: 13px; color: var(--faint); }
   .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
 
@@ -54,7 +65,7 @@
   hr.hair { border: 0; border-top: 1px solid var(--hair); margin: 18px 0; }
 
   table { border-collapse: collapse; width: 100%; font-size: 16px; }
-  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--hair);
+  th, td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--hair);
     vertical-align: top; }
   th { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
     text-transform: uppercase; letter-spacing: .08em; border-bottom: 1.5px solid var(--ink); }
@@ -62,7 +73,7 @@
   tr.hl td { border-bottom: 1.5px solid var(--ink); font-weight: 600; }
 
   .stat { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
-  .stat .big { font-size: 56px; font-weight: 600; letter-spacing: -.02em; display: block; }
+  .stat .big { font-size: 44px; font-weight: 600; letter-spacing: -.02em; display: block; }
   .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
 
   ul.plain { list-style: none; padding: 0; }
@@ -133,10 +144,11 @@
 </section>
 
 <!-- ================= SLIDE 2 — EXPERIMENT ================= -->
-<section class="slide dark" data-od-id="slide-02-experiment"><b>computer-use-graph</b><span>02 / 05 · experiment</span></div>
+<section class="slide dark" data-od-id="slide-02-experiment">
+  <div class="kicker"><b>computer-use-graph</b><span>02 / 05 · experiment</span></div>
   <h2>The miniature: same data, two memories, one difference</h2>
-  <p class="sub">A controlled replica of the Environment Maps arm structure, on a synthetic
-  admin panel — with the two controls their setup lacked.</p>
+  <p class="sub" style="margin-bottom:14px">A controlled replica of the Environment Maps arm
+  structure, on a synthetic admin panel — with the two controls their setup lacked.</p>
   <div class="cols3">
     <div>
       <p><b>The site.</b> 25 pages, 3-level navigation, decoy labels: “Email digest” next to
@@ -155,7 +167,7 @@
       the only difference is structure.</p>
     </div>
   </div>
-  <hr class="rule">
+  <hr class="rule" style="margin:12px 0">
   <div class="cols">
     <div>
       <table>
@@ -169,8 +181,7 @@
     <div>
       <p><b>What this is not.</b> Not evidence for the hypothesis — a smoke test of the
       machinery, powered to reproduce the literature’s warnings, not to detect the effect.
-      The pre-registered plan for the real experiment is in the repo
-      (<span class="mono">docs/02-design-v0.2.md</span>).</p>
+      The real experiment’s plan is pre-registered in the repo.</p>
     </div>
   </div>
 </section>
@@ -205,7 +216,8 @@
 </section>
 
 <!-- ================= SLIDE 4 — RESULTS ================= -->
-<section class="slide dark" data-od-id="slide-04-results"><b>computer-use-graph</b><span>04 / 05 · results</span></div>
+<section class="slide dark" data-od-id="slide-04-results">
+  <div class="kicker"><b>computer-use-graph</b><span>04 / 05 · results</span></div>
   <h2>Ordering confirmed. Significance not yet — as predicted.</h2>
   <div class="cols">
     <div>
@@ -243,7 +255,8 @@
 </section>
 
 <!-- ================= SLIDE 5 — CONCLUSION / NEXT ================= -->
-<section class="slide light" data-od-id="slide-05-conclusion"><b>computer-use-graph</b><span>05 / 05 · conclusion &amp; next steps</span></div>
+<section class="slide light" data-od-id="slide-05-conclusion">
+  <div class="kicker"><b>computer-use-graph</b><span>05 / 05 · conclusion &amp; next steps</span></div>
   <h2>The machinery is validated. The next dollar goes to the real thing.</h2>
   <div class="cols">
     <div>
