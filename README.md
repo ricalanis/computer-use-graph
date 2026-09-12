@@ -1,7 +1,5 @@
 # computer-use-graph
 
-Public, clean-room research project on web agents.
-
 **Question:** does an autonomously explored, type-abstracted site graph beat token-matched flat
 trajectory memory at equal amortized cost, on configuration-heavy sites? And can an uncertainty
 signal calibrated against episode outcome decide when to trust it?
