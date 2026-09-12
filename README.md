@@ -83,47 +83,92 @@ python3 micro/analyze.py
 
 Stdlib only, no other dependencies. Each full arm-seed run is ~24 episodes × ~7 LLM calls.
 
-## Demo sequence (current state, ~10 minutes)
+## Demo script (current state, ~10 minutes)
 
-A live walkthrough of what exists right now, in order. Every step is runnable from a terminal or
-shown from committed files — steps 5–6 can fall back to the committed results if the network is
-unreliable.
+What follows is the script itself — narration to deliver, with links to each artifact and
+commands as stage cues. Steps 5–6 can fall back to the committed results if the network is
+unreliable; everything shown is in git.
 
-1. **The bet (30s).** This README, top. The one-line question, and: "we built the smallest possible
-   version of this experiment and ran it."
-2. **The evidence base (1 min).** `knowledge/08-key-findings.md` — point at F1 (the closest paper
-   already ran graph-vs-flat, so our novelty is autonomous exploration + cost accounting) and F2
-   (flat memory takes ~2/3 of the win, so the real fight is graph vs flat).
-3. **The site and the arms (2 min).** `micro/micro_exp.py` — scroll `PAGES` (25 pages, decoy
-   labels), then `explore()` (the task-agnostic random walk that never sees task text — the
-   anti-contamination firewall), then `graph_block` vs `flat_block`: same exploration data, two
-   representations, char-matched budgets. Identical information; the only difference is structure.
-4. **The actual memories (1 min).** Side by side:
-   ```bash
-   cat micro/memory_graph_s7.txt   # typed pages, affordance->destination edges
-   cat micro/memory_flat_s7.txt    # recency-ordered transcript, same chars
-   ```
-   The whole hypothesis visible in two text files.
-5. **Run one arm live (3 min).**
-   ```bash
-   python3 micro/micro_exp.py --arm graph --seed 7 --out /tmp/demo_graph.json
-   ```
-   ~24 episodes against Ollama in real time; every step is one LLM call, logged with confidence.
-6. **The analysis (1 min).**
-   ```bash
-   python3 micro/analyze.py
-   ```
-   Walk the output top to bottom: the arm table (59.7% → 70.8% → 73.6%), the paired stats
-   ("graph vs flat: +2.8pp, p=0.73 — not significant, and that's the expected result at n=72; the
-   power tables in this repo predicted it"), then the AUROC block ("verbalized confidence is 0.49,
-   i.e. useless — which is itself a finding; it matches the literature").
-7. **The honest close (1 min).** `micro/README.md` → "Known limitations" (smoke test, one model,
-   no distractor control), then the status line above: machinery validated, direction correct,
-   noise exactly as predicted. Next spend: the entropy scorer and the real-benchmark pilot, both
-   planned in `docs/02-design-v0.2.md`.
+---
 
-Arc: *a verified literature base, a working miniature of the exact experiment, results that
-reproduce the literature's warnings, and a pre-registered plan for the real thing.*
+**[1 — The bet · 30s · this README, top]**
+
+> "This repo asks one question: does an agent that explores a website on its own and builds a
+> graph of it beat an agent that just rereads its transcripts — when both get the same memory
+> budget and the exploration cost is counted. We haven't run the real experiment yet. What we
+> have is the verified evidence base, and a working miniature of the exact experiment, with
+> results. This is that miniature."
+
+**[2 — Why the fight is graph vs flat · 1 min · [key findings](knowledge/08-key-findings.md)]**
+
+> "Twenty findings changed our plan. Two matter for this demo.
+> [F1](knowledge/08-key-findings.md): the closest paper already ran graph-versus-nothing on
+> WebArena — so that's not a contribution anymore. Our novelty is autonomous exploration and
+> honest cost accounting.
+> [F2](knowledge/08-key-findings.md): wherever a flat baseline existed, flat memory took about
+> two-thirds of the win. So the real fight is graph versus flat — and it will be small. The
+> miniature was built to test the machinery for exactly that fight."
+
+**[3 — The experiment, in code · 2 min · [micro_exp.py](micro/micro_exp.py)]**
+
+> "A synthetic admin panel: 25 pages, three levels of navigation, and decoy labels —
+> 'Email digest' next to 'Email notifications', 'Install analytics' next to 'Install beta
+> analytics'. The agent gets no hints about which is real.
+> This function — `explore` — is a random walk. It never sees task text. That's the
+> anti-contamination firewall: every evaluation task is held out by construction.
+> Then the same exploration log becomes two memories: `graph_block` — typed pages with
+> affordance-to-destination edges — and `flat_block` — a recency-ordered transcript. Same data,
+> same character budget. Identical information. The only difference is structure."
+
+**[4 — The two memories, side by side · 1 min · stage cue]**
+
+```bash
+cat micro/memory_graph_s7.txt
+cat micro/memory_flat_s7.txt
+```
+
+> "On the left, the graph: every page type, every button, where it leads. On the right, the
+> transcript: the same knowledge, buried in narrative order. Same characters. This is the whole
+> hypothesis, visible in two text files."
+
+**[5 — One arm, live · 3 min · stage cue]**
+
+```bash
+python3 micro/micro_exp.py --arm graph --seed 7 --out /tmp/demo_graph.json
+```
+
+> "This is the agent operating the panel right now — every step is one model call, and every
+> step logs the action, the destination, and the agent's own confidence. Twenty-four tasks,
+> three memory arms, three exploration seeds — two hundred sixteen paired episodes in the full
+> run; this is one arm of it."
+
+**[6 — The results · 1 min · stage cue]**
+
+```bash
+python3 micro/analyze.py
+```
+
+> "No memory: 59.7%. Flat transcript: 70.8%. Graph: 73.6%. The ordering is the hypothesis's
+> direction — but look at the paired statistics: graph versus flat is +2.8 points, p = 0.73.
+> Not significant. And that is the expected result: our own power tables said 72 pairs can't
+> resolve a small effect — the real run needs the full 362-task benchmark.
+> One more thing: verbalized confidence — the agent saying 'I'm 90% sure' — has an AUROC of
+> 0.49 against failure. Coin flip. Useless. That's not a bug; it's a published finding we
+> reproduced, and it's why the next thing we build is an entropy scorer instead."
+
+**[7 — The honest close · 1 min · [micro/README.md](micro/README.md)]**
+
+> "The limitations are in the repo, not hidden: smoke test, one model, no distractor control
+> yet. What's validated is the machinery — task-agnostic exploration, matched budgets, paired
+> statistics, honest power math — and the direction. The plan for the real experiment is
+> pre-registered in [the design doc](docs/02-design-v0.2.md): the entropy scorer, the pilot on
+> real WebArena, then the eight-arm comparison. The miniature says the machinery is ready.
+> The next dollar spent goes to the real thing."
+
+---
+
+*Arc: a verified literature base → a working miniature of the exact experiment → results that
+reproduce the literature's warnings → a pre-registered plan for the real thing.*
 
 ## Scope rule
 
