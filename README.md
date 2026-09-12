@@ -40,11 +40,15 @@ experiment sequence is in `docs/02-design-v0.2.md` §8.
 
 ## Start here
 
-1. `knowledge/08-key-findings.md` — what we learned that changed the plan
-2. `knowledge/02-action-space-ladder.md` — the computer-use substrate question
-3. `docs/02-design-v0.2.md` — the current design and experiment sequence
-4. `knowledge/09-decisions-log.md` — what's decided, proposed, and open
-5. `micro/README.md` — the micro-validation run and its results
+1. [Key findings](knowledge/08-key-findings.md) — what we learned that changed the plan
+2. [Action-space ladder](knowledge/02-action-space-ladder.md) — the computer-use substrate question
+3. [Design v0.2](docs/02-design-v0.2.md) — the current design and experiment sequence
+4. [Decisions log](knowledge/09-decisions-log.md) — what's decided, proposed, and open
+5. [Micro-validation run](micro/README.md) — the experiment and its results
+6. [Replication lineage](#replication-lineage) — how the micro run maps to
+   [Environment Maps (arXiv:2603.23610)](https://arxiv.org/abs/2603.23610), the closest prior work
+7. [Demo pointers](#demo-pointers-current-state-10-minutes) — the 10-minute walkthrough of the
+   current state
 
 ## Layout
 
