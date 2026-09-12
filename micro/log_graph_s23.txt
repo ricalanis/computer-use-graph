@@ -1,0 +1,1 @@
+[graph s23] 19/24 success | mem 1216 chars | mean steps 6.1 | invalid 0

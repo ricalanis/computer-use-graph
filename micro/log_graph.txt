@@ -1,0 +1,1 @@
+[graph] 10/12 success | mem 1742 chars | mean steps 5.3 | invalid 0

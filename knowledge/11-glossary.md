@@ -1,0 +1,40 @@
+# Glossary
+
+- **A11y tree** — Accessibility tree: the browser's semantic representation of UI elements (role, name, state). This project's observation substrate.
+- **Actionability** — Playwright's checks before acting: visible, stable, receives events (not occluded), enabled. Used to filter candidates before computing entropy.
+- **Affordance** — An action available from a state (a button, link, field), identified by role + accessible name + structural path.
+- **Amortization crossover** — The task count N at which a graph's one-time construction cost is recouped. Reported as two numbers: *cost-crossover* and *significance-crossover*.
+- **Arm / condition** — One experimental configuration (arms 1–7 plus 2a).
+- **AUROC** — Area under the ROC curve for a signal predicting a binary label. 0.5 is chance.
+- **Bayesian surprise** — KL(posterior ‖ prior) over a belief state (Itti & Baldi). Our with-graph vs without-graph KL is only a *proxy*.
+- **BH-FDR** — Benjamini–Hochberg false-discovery-rate correction for multiple secondary comparisons.
+- **bid** — BrowserGym element id. The `bid` action subset is layer 2; `coord` is layer 1.
+- **Binding** — The app-specific handle a high-rung action depends on (selector, node id, endpoint). It can go stale.
+- **Calibration gate** — Pre-registered Phase 0 test of whether an uncertainty signal predicts failure well enough to control behavior.
+- **Cochran's Q** — Omnibus test for differences among several paired binary conditions.
+- **Code-as-action** — The agent emits executable code per step (CodeAct) instead of discrete actions.
+- **Discordant pair (ψ)** — A task where two arms disagree (one succeeds, one fails). Its rate drives McNemar sample size.
+- **Episode context vector** — Hidden state not in node identity (auth, cart, filters, modal), checked as edge preconditions.
+- **Firewall** — Separation that stops eval task information reaching map construction. Here, a task-agnostic crawler.
+- **Grounding** — Mapping a description to a concrete target: a pixel, element, or endpoint.
+- **Instance layer** — Concrete pages/URLs/states. A cache under the type layer.
+- **isTrusted** — DOM event flag: `true` for user-agent-generated events, `false` for `el.click()`/`dispatchEvent`.
+- **Key-node scoring** — Partial credit for reaching annotated intermediate states (WebCanvas).
+- **Layer / rung** — A position on the action-space ladder (0 OS input … 7 public API).
+- **Learning progress** — Intrinsic signal equal to the *reduction* in prediction error over time. Robust to the noisy TV.
+- **Length confound** — More context mechanically lowers perplexity regardless of information content.
+- **Macro** — A pre-computed action sequence executed semi-open-loop. Here, an option.
+- **Matched-PPL distractor** — Control context matched to the real graph on token count *and* unconditioned perplexity.
+- **McNemar's test** — Paired test for two conditions' binary outcomes on the same tasks.
+- **Noisy TV** — An unlearnable random source (ads, timestamps) that stays permanently surprising and traps curiosity-driven exploration.
+- **Option (semi-MDP)** — (initiation set, policy, termination condition). Sutton, Precup & Singh 1999. The formal model of a graph edge.
+- **Path switching** — An agent abandoning and later recovering a direction mid-trajectory. It breaks early-uncertainty → outcome prediction.
+- **Prefix caching** — Serving-engine KV reuse for shared prompt prefixes. Broke `prompt_logprobs` in vLLM.
+- **prompt_logprobs** — vLLM option returning logprobs for *input* tokens. Used to score supplied candidate actions.
+- **Set-of-marks** — Numbered overlays on a screenshot's interactive elements. The agent picks a number.
+- **State abstraction function** — Rule deciding when two observed pages are the "same state" (Crawljax term).
+- **Termination predicate** — Checkable assertion that an option completed. Also the free staleness signal.
+- **Type layer** — Abstract page types clustered from instances, carrying the union of affordances. The transferable object.
+- **Validator** — Benchmark component scoring success. Programmatic ones under-credit; LLM judges over-credit.
+- **Wilson interval** — Binomial CI with better coverage than Wald at small n or extreme p. House style.
+- **World-model surprisal** — Surprisal of the next observation (here its *type label*) under the scorer, with vs without graph context.

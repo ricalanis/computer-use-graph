@@ -1,0 +1,1 @@
+[graph s7] 16/24 success | mem 1678 chars | mean steps 7.0 | invalid 0

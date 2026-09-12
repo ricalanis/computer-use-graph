@@ -1,0 +1,18 @@
+NOTES from earlier exploration of this panel:
+On page 'notifications' clicked 'Change notification email' and arrived at 'notifications'.
+On page 'notifications' clicked 'Back to account' and arrived at 'account'.
+On page 'account' clicked 'Email' and arrived at 'email_aliases'.
+On page 'email_aliases' clicked 'Change primary email' and arrived at 'email_aliases'.
+On page 'email_aliases' clicked 'Back to account' and arrived at 'account'.
+On page 'account' clicked 'Email' and arrived at 'email_aliases'.
+On page 'email_aliases' clicked 'Back to account' and arrived at 'account'.
+On page 'account' clicked 'Security' and arrived at 'security'.
+On page 'security' clicked 'Access logs' and arrived at 'access_logs'.
+On page 'access_logs' clicked 'Back to security' and arrived at 'security'.
+On page 'security' clicked 'Change password' and arrived at 'security'.
+On page 'security' clicked 'Sessions' and arrived at 'sessions'.
+On page 'sessions' clicked 'Revoke all sessions' and arrived at 'sessions'.
+On page 'sessions' clicked 'Back to security' and arrived at 'security'.
+On page 'security' clicked 'Change password' and arrived at 'security'.
+On page 'security' clicked 'Change password' and arrived at 'security'.
+On page 'security' clicked 'Change password' and arrived at 'security'.

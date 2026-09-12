@@ -1,0 +1,1506 @@
+{
+ "arm": "none",
+ "seed": 23,
+ "memory_chars": 0,
+ "budget": 0,
+ "n": 24,
+ "successes": 14,
+ "success_rate": 0.5833333333333334,
+ "mean_steps": 7.458333333333333,
+ "invalid_actions": 0,
+ "results": [
+  {
+   "id": "s01_display_name",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    0,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 0
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Profile",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit display name",
+     "to": "profile",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s02_display_name",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Profile",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit display name",
+     "to": "profile",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s03_bio",
+   "success": true,
+   "steps": 7,
+   "confs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Profile",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s04_bio",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Profile",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s05_notif_email",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    80,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 80
+    },
+    {
+     "page": "account",
+     "action": "Email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s06_notif_email",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    90,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 90
+    },
+    {
+     "page": "account",
+     "action": "Email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    },
+    {
+     "page": "email_aliases",
+     "action": "Change primary email",
+     "to": "email_aliases",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s07_password",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Security",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Change password",
+     "to": "security",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s08_password",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Security",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Change password",
+     "to": "security",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s09_new_integration",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Workspace",
+     "to": "workspace",
+     "conf": 100
+    },
+    {
+     "page": "workspace",
+     "action": "Integrations",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s10_new_integration",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    0,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 0
+    },
+    {
+     "page": "dashboard",
+     "action": "Workspace",
+     "to": "workspace",
+     "conf": 100
+    },
+    {
+     "page": "workspace",
+     "action": "Integrations",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s11_plan",
+   "success": true,
+   "steps": 3,
+   "confs": [
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "Change plan",
+     "to": "billing",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s12_plan",
+   "success": true,
+   "steps": 3,
+   "confs": [
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "Change plan",
+     "to": "billing",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s13_twofa",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    80,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Security",
+     "to": "security",
+     "conf": 80
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s14_sessions_revoked",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    60,
+    100,
+    100,
+    100,
+    80,
+    100,
+    80,
+    100,
+    60,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "System",
+     "to": "system",
+     "conf": 60
+    },
+    {
+     "page": "system",
+     "action": "Advanced",
+     "to": "advanced",
+     "conf": 100
+    },
+    {
+     "page": "advanced",
+     "action": "Back to system",
+     "to": "system",
+     "conf": 100
+    },
+    {
+     "page": "system",
+     "action": "Back to dashboard",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "System",
+     "to": "system",
+     "conf": 80
+    },
+    {
+     "page": "system",
+     "action": "Back to dashboard",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "System",
+     "to": "system",
+     "conf": 80
+    },
+    {
+     "page": "system",
+     "action": "Back to dashboard",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "System",
+     "to": "system",
+     "conf": 60
+    },
+    {
+     "page": "system",
+     "action": "Back to dashboard",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s15_email_digest",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    60,
+    80,
+    90,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Preferences",
+     "to": "preferences",
+     "conf": 60
+    },
+    {
+     "page": "preferences",
+     "action": "Notification preferences",
+     "to": "prefs_notifications",
+     "conf": 80
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 90
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s16_installed_analytics",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    70,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Workspace",
+     "to": "workspace",
+     "conf": 70
+    },
+    {
+     "page": "workspace",
+     "action": "Integrations",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s17_installed_chat",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    50,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    90,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Workspace",
+     "to": "workspace",
+     "conf": 50
+    },
+    {
+     "page": "workspace",
+     "action": "Integrations",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 90
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "s18_viewed_invoices",
+   "success": true,
+   "steps": 4,
+   "confs": [
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    },
+    {
+     "page": "invoices",
+     "action": "Open invoice list",
+     "to": "invoices",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c01_twofa_revoke",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    30,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 30
+    },
+    {
+     "page": "account",
+     "action": "Security",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c02_digest_email",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    80,
+    70,
+    85,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Preferences",
+     "to": "preferences",
+     "conf": 80
+    },
+    {
+     "page": "preferences",
+     "action": "Notification preferences",
+     "to": "prefs_notifications",
+     "conf": 70
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 85
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    },
+    {
+     "page": "prefs_notifications",
+     "action": "Email summary",
+     "to": "prefs_notifications",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c03_both_ints",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Workspace",
+     "to": "workspace",
+     "conf": 100
+    },
+    {
+     "page": "workspace",
+     "action": "Integrations",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    },
+    {
+     "page": "integrations",
+     "action": "New integration",
+     "to": "integrations",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c04_plan_inv",
+   "success": false,
+   "steps": 12,
+   "confs": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "Change plan",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    },
+    {
+     "page": "invoices",
+     "action": "Back to billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    },
+    {
+     "page": "invoices",
+     "action": "Back to billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    },
+    {
+     "page": "invoices",
+     "action": "Back to billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    },
+    {
+     "page": "invoices",
+     "action": "Back to billing",
+     "to": "billing",
+     "conf": 100
+    },
+    {
+     "page": "billing",
+     "action": "View invoices",
+     "to": "invoices",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c05_name_bio",
+   "success": true,
+   "steps": 5,
+   "confs": [
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Profile",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit display name",
+     "to": "profile",
+     "conf": 100
+    },
+    {
+     "page": "profile",
+     "action": "Edit bio",
+     "to": "profile",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  },
+  {
+   "id": "c06_pass_2fa",
+   "success": true,
+   "steps": 5,
+   "confs": [
+    100,
+    100,
+    80,
+    100,
+    100
+   ],
+   "traj": [
+    {
+     "page": "login",
+     "action": "Sign in",
+     "to": "dashboard",
+     "conf": 100
+    },
+    {
+     "page": "dashboard",
+     "action": "Account",
+     "to": "account",
+     "conf": 100
+    },
+    {
+     "page": "account",
+     "action": "Security",
+     "to": "security",
+     "conf": 80
+    },
+    {
+     "page": "security",
+     "action": "Change password",
+     "to": "security",
+     "conf": 100
+    },
+    {
+     "page": "security",
+     "action": "Enable 2FA",
+     "to": "security",
+     "conf": 100
+    }
+   ],
+   "invalid": 0
+  }
+ ]
+}

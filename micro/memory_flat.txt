@@ -1,0 +1,22 @@
+NOTES from earlier exploration of this panel:
+On page 'security' clicked 'Access logs' and arrived at 'access_logs'.
+On page 'access_logs' clicked 'Back to security' and arrived at 'security'.
+On page 'security' clicked 'Change password' and arrived at 'security'.
+On page 'security' clicked 'Access logs' and arrived at 'access_logs'.
+On page 'access_logs' clicked 'Back to security' and arrived at 'security'.
+On page 'security' clicked 'Back to account' and arrived at 'account'.
+On page 'account' clicked 'Notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Push digest' and arrived at 'notifications'.
+On page 'notifications' clicked 'Back to account' and arrived at 'account'.
+On page 'account' clicked 'Notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Push digest' and arrived at 'notifications'.
+On page 'notifications' clicked 'Change notification email' and arrived at 'notifications'.
+On page 'notifications' clicked 'Push digest' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email digest' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.
+On page 'notifications' clicked 'Email notifications' and arrived at 'notifications'.

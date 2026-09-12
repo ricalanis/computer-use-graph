@@ -1,0 +1,1 @@
+[flat s7] 18/24 success | mem 1713 chars | mean steps 6.2 | invalid 0

@@ -1,0 +1,1 @@
+[graph s11] 18/24 success | mem 1292 chars | mean steps 6.2 | invalid 0

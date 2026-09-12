@@ -1,0 +1,17 @@
+NOTES from earlier exploration of this panel:
+On page 'account' clicked 'Back to dashboard' and arrived at 'dashboard'.
+On page 'dashboard' clicked 'Workspace' and arrived at 'workspace'.
+On page 'workspace' clicked 'Apps' and arrived at 'apps'.
+On page 'apps' clicked 'Back to workspace' and arrived at 'workspace'.
+On page 'workspace' clicked 'Integrations' and arrived at 'integrations'.
+On page 'integrations' clicked 'Browse directory' and arrived at 'integrations_dir'.
+On page 'integrations_dir' clicked 'Install chat' and arrived at 'integrations'.
+On page 'integrations' clicked 'New integration' and arrived at 'integrations'.
+On page 'integrations' clicked 'Browse directory' and arrived at 'integrations_dir'.
+On page 'integrations_dir' clicked 'Install beta analytics' and arrived at 'integrations'.
+On page 'integrations' clicked 'Back to workspace' and arrived at 'workspace'.
+On page 'workspace' clicked 'Back to dashboard' and arrived at 'dashboard'.
+On page 'dashboard' clicked 'Workspace' and arrived at 'workspace'.
+On page 'workspace' clicked 'Back to dashboard' and arrived at 'dashboard'.
+On page 'dashboard' clicked 'Account' and arrived at 'account'.
+On page 'account' clicked 'Security' and arrived at 'security'.

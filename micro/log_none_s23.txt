@@ -1,0 +1,1 @@
+[none s23] 14/24 success | mem 0 chars | mean steps 7.5 | invalid 0

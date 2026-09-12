@@ -1,0 +1,1 @@
+[flat s11] 16/24 success | mem 1297 chars | mean steps 6.8 | invalid 0
