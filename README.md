@@ -16,11 +16,11 @@ labels, 3-level nav) tested the harness mechanics before any real benchmark work
 arms — none, flat transcript, site graph — built from the **same task-agnostic exploration**,
 char-matched budgets, 24 tasks × 3 exploration seeds (216 paired episodes).
 
-| arm | success | 95% CI |
-|---|---|---|
-| none | 59.7% | [48.2%, 70.3%] |
-| flat | 70.8% | [59.5%, 80.1%] |
-| graph | 73.6% | [62.4%, 82.4%] |
+| arm | success | 95% CI | avg steps |
+|---|---|---|---|
+| none | 59.7% | [48.2%, 70.3%] | 7.3 |
+| flat | 70.8% | [59.5%, 80.1%] | 6.5 |
+| graph | 73.6% | [62.4%, 82.4%] | 6.4 |
 
 What it showed (details and caveats in `micro/README.md`):
 
