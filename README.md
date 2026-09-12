@@ -132,44 +132,41 @@ transfer null (0/48), and amortized cost. Those are Phase 2–3 in
 ## Demo pointers (current state, ~10 minutes)
 
 1. **The bet** — this README, top.
+   - *The whole project in one sentence: structure beats flat memory only if you count the
+     exploration cost. Everything after this is machinery for testing that sentence.*
 2. **Why graph-vs-flat** — [key findings](knowledge/08-key-findings.md) F1, F2.
+   - *The literature already answered graph-vs-nothing (14.2 → 28.2) and showed flat memory
+     takes ~2/3 of any win. So the only question left worth asking is the small one: does
+     structure add anything over flat, at matched cost?*
 3. **The experiment in code** — [micro_exp.py](micro/micro_exp.py): `PAGES` (decoy labels),
    `explore()` (task-agnostic firewall), `graph_block` vs `flat_block` (same data, char-matched).
+   - *Three design choices carry the whole experiment: decoy labels (the site can't be
+     brute-forced), a task-agnostic crawler (no eval contamination), and char-matched memories
+     (the arms differ in structure, nothing else).*
 4. **The two memories** — [graph](micro/memory_graph_s7.txt) vs [flat](micro/memory_flat_s7.txt).
+   - *Same exploration log, two formats. The graph is ~40 lines of "page: [button →
+     destination]"; the flat is the same facts buried in narrative order. That difference —
+     and nothing else — is what the experiment measures.*
 5. **Live run** — `python3 micro/micro_exp.py --arm graph --seed 7 --out /tmp/demo.json`
    (fallback: committed [results](micro/results_graph_s7.json)).
+   - *Every step is one model call: observe page → choose action → log confidence. No hidden
+     state, no clever tooling — the agent is deliberately simple so the memory contrast stays
+     clean.*
 6. **Results** — `python3 micro/analyze.py` (arm table, paired McNemar, AUROC; numbers in
    [micro/README.md](micro/README.md)).
+   - *The ordering matches the hypothesis (59.7 → 70.8 → 73.6) and the honest headline is the
+     second table: graph-vs-flat is +2.8pp at p=0.73 — exactly the "small effect, underpowered
+     sample" the repo's own power tables predicted. The AUROC block is the bonus finding: the
+     agent's self-reported confidence is a coin flip.*
 7. **Replication lineage** — the table above; paper: [arXiv:2603.23610](https://arxiv.org/abs/2603.23610).
+   - *The miniature reproduces the paper's ordering and its flat-dominance finding — with the
+     two controls the paper lacked (matched budgets, held-out firewall). Same science, tighter
+     controls, one site smaller.*
 8. **Honest close** — [micro/README.md](micro/README.md) limitations; next steps in
    [design v0.2](docs/02-design-v0.2.md) §8.
-
-### Vignettes — one main point per demo step
-
-- **1 · The bet.** The whole project in one sentence: structure beats flat memory *only if* you
-  count the exploration cost. Everything after this is machinery for testing that sentence.
-- **2 · Why graph-vs-flat.** The literature already answered graph-vs-nothing (14.2 → 28.2) and
-  showed flat memory takes ~2/3 of any win. So the only question left worth asking is the small
-  one: does structure add anything *over* flat, at matched cost?
-- **3 · The experiment in code.** Three design choices carry the whole experiment: decoy labels
-  (the site can't be brute-forced), a task-agnostic crawler (no eval contamination), and
-  char-matched memories (the arms differ in structure, nothing else).
-- **4 · The two memories.** Same exploration log, two formats. The graph is ~40 lines of
-  "page: [button → destination]"; the flat is the same facts buried in narrative order. That
-  difference — and nothing else — is what the experiment measures.
-- **5 · Live run.** Every step is one model call: observe page → choose action → log confidence.
-  No hidden state, no clever tooling — the agent is deliberately simple so the memory contrast
-  stays clean.
-- **6 · Results.** The ordering matches the hypothesis (59.7 → 70.8 → 73.6) and the honest
-  headline is the *second* table: graph-vs-flat is +2.8pp at p=0.73 — exactly the "small effect,
-  underpowered sample" the repo's own power tables predicted. The AUROC block is the bonus
-  finding: the agent's self-reported confidence is a coin flip.
-- **7 · Replication lineage.** The miniature reproduces the paper's ordering and its
-  flat-dominance finding — with the two controls the paper lacked (matched budgets, held-out
-  firewall). Same science, tighter controls, one site smaller.
-- **8 · Honest close.** What's validated is the machinery and the direction; what's *not*
-  established is the hypothesis itself. The next dollar goes to the entropy scorer and the
-  WebArena pilot — both pre-registered, neither started.
+   - *What's validated is the machinery and the direction; what's not established is the
+     hypothesis itself. The next dollar goes to the entropy scorer and the WebArena pilot —
+     both pre-registered, neither started.*
 
 ## Scope rule
 
