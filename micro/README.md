@@ -1,7 +1,17 @@
 # Micro-validation run (2026-09-12)
 
-Ten-minute minimal experiment validating the harness mechanics of the main hypothesis
-(`../docs/02-design-v0.2.md`), on a synthetic config-admin site instead of WebArena.
+Minimal experiment replicating the arm structure of **Environment Maps: Structured Environmental
+Representations for Long-Horizon Agents** ([arXiv:2603.23610](https://arxiv.org/abs/2603.23610),
+root-verified — see `../research/00-verification-log.md`) on a synthetic config-admin site, with
+the controls their setup lacked: char-matched memory budgets and a task-agnostic exploration
+firewall. See the [replication lineage table](../README.md#replication-lineage) in the repo README.
+
+| | Environment Maps (paper) | this run |
+|---|---|---|
+| arms | no map / raw trajectories / map | none / flat / graph |
+| ordering | 14.2 < 23.3 < 28.2 | 59.7 < 70.8 < 73.6 |
+| flat share of win | 65% | 79% |
+| structure-over-flat | +4.9pp (not compute-matched) | +2.8pp (char-matched, p=0.73) |
 
 ## Setup
 
